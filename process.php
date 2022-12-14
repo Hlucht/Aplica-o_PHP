@@ -10,11 +10,11 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
     $body="Nome: ".$name.'\n';
           "Email: ".$email.'\n';
           "Mensagem: ".$message.'\n';
-    $header="From:".$email."Replay-To:".$email;
+    $header="From:".$email."Replay-To:".$email; //necessita de domínio
 
     try{
         mail($to, $subject, $body, $header);
-        echo"E-MAIL QUASE ENVIADO COM SUCESSO, ESSE PROGRAMADOR PRECISAVA DE UMA HOSPEDAGEM E UM DOMÍNIO PRA FINALIZAR ESSA TAREFA.";
+        echo"E-MAIL ENVIADO COM SUCESSO";
     }catch (Exception $e) {
         echo "Caught TestException ('{$e->getMessage()}')\n{$e}\n";
     }
